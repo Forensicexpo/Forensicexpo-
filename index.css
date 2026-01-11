@@ -1,0 +1,308 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+    --primary: 210 80% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 18% 46%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 45%;
+    --accent: 210 90% 88%;
+    --accent-foreground: 215 25% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 80% 42%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    --chart-1: 210 80% 42%;
+    --chart-2: 200 18% 46%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 199 89% 48%;
+    --sidebar-background: 215 25% 15%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 210 80% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 20% 22%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 20% 25%;
+    --sidebar-ring: 210 80% 42%;
+    --gradient-primary: linear-gradient(135deg, hsl(210 80% 42%), hsl(200 18% 46%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    --gradient-background: linear-gradient(180deg, hsl(210 20% 98%), hsl(210 90% 88%));
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 4px 16px rgba(33, 107, 165, 0.15);
+  }
+
+  .dark {
+    --background: 215 25% 12%;
+    --foreground: 210 20% 98%;
+    --card: 215 22% 16%;
+    --card-foreground: 210 20% 98%;
+    --popover: 215 22% 16%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 20% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 20% 22%;
+    --muted-foreground: 210 15% 65%;
+    --accent: 215 20% 22%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 210 85% 55%;
+    --success: 142 70% 45%;
+    --warning: 38 90% 55%;
+    --info: 199 85% 55%;
+    --chart-1: 210 85% 55%;
+    --chart-2: 200 20% 50%;
+    --chart-3: 142 70% 45%;
+    --chart-4: 38 90% 55%;
+    --chart-5: 199 85% 55%;
+    --sidebar-background: 215 25% 15%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 210 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 20% 22%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 20% 25%;
+    --sidebar-ring: 210 85% 55%;
+    --gradient-primary: linear-gradient(135deg, hsl(210 85% 55%), hsl(200 20% 50%));
+    --gradient-card: linear-gradient(135deg, hsl(215 22% 16%), hsl(215 25% 12%));
+    --gradient-background: linear-gradient(180deg, hsl(215 25% 12%), hsl(215 20% 22%));
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 4px 16px rgba(66, 153, 225, 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(33, 107, 165, 0.4);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Glass morphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Stagger animations */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+
+  .stagger-6 {
+    animation-delay: 0.6s;
+  }
+}
